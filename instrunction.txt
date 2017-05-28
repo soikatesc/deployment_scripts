@@ -1,0 +1,27 @@
+Mean_deployment_script_1:
+-------------------------
+	1. Need to log into a EC2 linux machine
+
+	2. Make a script file
+		sudo touch <filename>
+
+	3. Change the premission of the file to make it executable
+		sudo chmod +x <filename>
+
+	4. Copy the script from github and paste it to the newly created file
+
+	5. run the script
+		./<filename>
+
+	6. Enter your github repo address for cloning without .git 
+		Note: Make sure you remove .git, otherwise deployment will not work
+		for now.
+
+	7. Enter your private IP address from Amazon EC2 machine.
+
+	8. Script will run and, need to enter yes twice when it ask.
+
+	9. When pm2 status both server and mongod online, deployment successfully completed
+	
+	10. Go to public ip address and website should load.
+
