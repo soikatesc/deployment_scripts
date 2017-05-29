@@ -10,18 +10,21 @@ Mean_deployment_script_1:
 
 	4. Copy the script from github and paste it to the newly created file
 
-	5. run the script
+	5. Make sure your port number matchas to the script port.
+		(e.g : 8000) line number 12
+
+	6. run the script
 		./<filename>
 
-	6. Enter your github repo address for cloning without .git 
+	7. Enter your github repo address for cloning without .git 
 		Note: Make sure you remove .git, otherwise deployment will not work
 		for now.
 
-	7. Enter your private IP address from Amazon EC2 machine.
+	8. Enter your private IP address from Amazon EC2 machine.
 
-	8. Script will run and, need to enter yes twice when it ask.
+	9. Script will run and, need to enter yes twice when it ask.
 
-	9. When pm2 status both server and mongod online, deployment successfully completed
+	10. When pm2 status both server and mongod online, deployment successfully completed
 	
-	10. Go to public ip address and website should load.
+	11. Go to public ip address and website should load.
 
