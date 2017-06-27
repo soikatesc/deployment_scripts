@@ -50,7 +50,7 @@ sudo chown -R ubuntu $project_dir
 cd $project_dir
 bundle install
 sudo touch log/development.log
-sudo chmod 0666 /var/www/ruby_belt/log/development.log
+sudo chmod 0666 /var/www/$project_dir/log/development.log
 rake db:create:all
 rake db:migrate
 sudo wget https://raw.github.com/JasonGiedymin/nginx-init-ubuntu/master/nginx -O /etc/init.d/nginx
