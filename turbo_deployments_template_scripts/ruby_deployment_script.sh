@@ -8,7 +8,7 @@ server_config="server {
 
 dest_dir=/etc/nginx/sites-available/rails.conf
 
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get -y upgrade
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 \curl -sSL https://get.rvm.io | bash -s stable
@@ -20,7 +20,7 @@ rvm use 2.3.1 --default
 rvm rubygems current --force
 gem install rails -v 4.2.7 --no-ri --no-rdoc
 gem install passenger
-sudo apt-get install libcurl4-openssl-dev
+sudo apt-get -y install libcurl4-openssl-dev
 sudo dd if=/dev/zero of=/swap bs=1M count=1024
 sudo mkswap /swap
 sudo swapon /swap
@@ -28,12 +28,12 @@ rvmsudo passenger-install-nginx-module
   # Press Enter; use space bar to select only Ruby, Node.js; Enter; 1; Enter
   # Prefix directory: /etc/nginx
   # Press Enter
-sudo apt-get install postgresql postgresql-contrib libpq-dev
+sudo apt-get -y install postgresql postgresql-contrib libpq-dev
 sudo su postgres -c psql <<EOF
 CREATE ROLE ubuntu SUPERUSER LOGIN;
 EOF
-sudo apt-get install nodejs
-sudo apt-get install git
+sudo apt-get -y install nodejs
+sudo apt-get -y install git
 cd /var
 sudo mkdir www
 cd www

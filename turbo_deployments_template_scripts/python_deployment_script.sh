@@ -19,21 +19,21 @@ server_name="server {
   server_name $ip_addr;
   location = /favicon.ico { access_log off; log_not_found off; }
   location /static/ {
-	root /home/ubuntu/$project_dir;
+    root /home/ubuntu/$project_dir;
   }
   location / {
-	include proxy_params;
-	proxy_pass http://unix:/home/ubuntu/$project_dir/$app_dir.sock;
+    include proxy_params;
+    proxy_pass http://unix:/home/ubuntu/$project_dir/$app_dir.sock;
   }
 }"
 
-#installing packages
-sudo apt-get update
-yes Y | sudo apt-get install python-pip python-dev nginx git
-sudo apt-get update
+# installing packages
+sudo apt-get -y update
+sudo apt-get -y install python-pip python-dev nginx git
+sudo apt-get -y update
 sudo pip install virtualenv
 
-#downloading projects
+# downloading projects
 git clone $url
 cd $project_dir
 virtualenv venv
@@ -41,7 +41,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 pip install django bcrypt django-extensions
 pip install gunicorn
-
 cd $app_dir
 
 sudo sed -i '26s/.*/DEBUG = False/' settings.py
@@ -53,7 +52,7 @@ yes yes | python manage.py collectstatic
 # gunicorn --bind 0.0.0.0:8000 $app_dir.wsgi:application
 deactivate
 
-#setup gunicorn --- working ---
+# setup gunicorn --- working ---
 sudo sh -c "echo '$gunicorn' >> '$gunicorn_path'"
 
 sudo systemctl daemon-reload
