@@ -24,10 +24,7 @@ sudo apt-get -y install libcurl4-openssl-dev
 sudo dd if=/dev/zero of=/swap bs=1M count=1024
 sudo mkswap /swap
 sudo swapon /swap
-rvmsudo passenger-install-nginx-module
-  # Press Enter; use space bar to select only Ruby, Node.js; Enter; 1; Enter
-  # Prefix directory: /etc/nginx
-  # Press Enter
+rvmsudo passenger-install-nginx-module --auto --prefix=/etc/nginx --auto-download --extra-configure-flags=none --languages ruby,nodejs
 sudo apt-get -y install postgresql postgresql-contrib libpq-dev
 sudo su postgres -c psql <<EOF
 CREATE ROLE ubuntu SUPERUSER LOGIN;
