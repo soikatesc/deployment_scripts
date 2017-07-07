@@ -5,7 +5,7 @@
  url=$address
  repo_name="${url##*/}"
  echo $repo_name
- read -p 'Project Name: ' project_name
+ read -p 'Project Name(name of the folder that contains main settings): ' project_name
 
  nginx_path=/etc/nginx/sites-available/$project_name
  gunicorn_path=/etc/systemd/system/gunicorn.service
