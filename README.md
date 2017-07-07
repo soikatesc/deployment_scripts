@@ -1,3 +1,10 @@
-# mean_deployment_script
-MEAN deployment script. It's a very convenient way to deploy your program to Amazon EC2 Linux machine.
-Just need to enter your Github project address without git extension and private IP address from EC2 instance.
+Deployment scripts for python, MEAN, and Ruby on rails stacks. 
+
+  1.Just need to create a ec2 instance in AWS.
+  2. Make a script file at home directory
+      sudo vim script.sh
+  3. Make the file executable by type this command:
+      sudo chmod +x script.sh
+  4. Run the script:
+      ./script.sh
+  
